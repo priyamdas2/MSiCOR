@@ -1,0 +1,12 @@
+I was giving a read about inclusion of covariates in mix markov model.
+ In page 8 of "seqHMM.pdf", near equation (9) it explains how to incorporate
+ covariates. For each patient there should be a set of covariates 
+(not dependent on time). 
+
+But after reading the description of  how to incorporate covariates
+ in "seqHMM_package.pdf" under "build_mmm" function, it seems there
+is no way to input covariate values. It only allows to include coefficient values which is k x l where k = number of covariates and l = number of clusters. But our input variable should be a n x k matrix (since n =number of patient, k= number of covariates).
+
+One way to estimate ONLY the coefficients is by using "estimate_coef"
+ function (page 20 of seqHMM_package). But we need to estimate them
+ simultaneously.
